@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <!-- <link rel="stylesheet" href="<?= base_url('assets_user/css/style.css'); ?>"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>GKS LAIPORI</title>
+    <style>
+    footer {
+    font-size: 14px;
+  }
+  
+  footer .social-icons a {
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+  
+  footer .social-icons a:hover {
+    color: #00aced;
+  }
+  .memo {
+    font-size: 25px;
+}
+
+.t_misi {
+    font-size: 25px;
+}
+.sejarah{
+    margin: 0 auto;
+    padding: 20px;
+}
+.infosejarah{
+    text-decoration: none;
+}
+.infosejarah:hover{
+    text-decoration: none;
+}
+.image-container img{
+    height: 400px;
+}
+
+
+@media (max-width:576px) {
+    .ayat {
+        font-size: 16px;
+    }
+
+    .gereja {
+        font-size: 20px;
+    }
+
+    .visi {
+        font-size: 18px;
+    }
+
+    .memo {
+        font-size: 18px !important;
+    }
+
+    .t_misi {
+        font-size: 18px;
+    }
+    .berita img{
+        width: 70%;
+        height: auto;
+    }
+    .card-img-top{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    .p-2 h5{
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+    .imgsej {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .image-container img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: 300px;
+        border-radius: 12px;
+    }
+    .text-container {
+        margin-top: 20px;
+    }
+    .pengurus img{
+       width: 300px;
+       height: 300px;
+    }
+  
+}  
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+        style="background-color: #34495e; z-index: 10; width: 100%">
+        <!-- <img src="<?= base_url('assets/img/sidlogo.png'); ?>" width="50px;" style="border-radius:30%;"> -->
+        <a class="navbar-brand ml-2 text-white" href="#" style="margin-left: 30px"><b>GKS Laipori</b></a>
+
+        <!-- Tombol Hamburger -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            style="margin-left: auto; margin-right: 30px">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto" style="font-size: 18px">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="">Sejarah gereja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="">Kegiatan Gereja</a>
+                </li>
+              
+            </ul>
+            <ul class="navbar-nav ms-auto" style="font-size: 18px">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- content -->
+     
+<div class="container-fluid mt-3" style="padding-top: 100px">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-11 col-sm-10 col-11 mb-3">
+            <img src="https://e9p6beu296y.exactdn.com/blog/wp-content/uploads/2023/09/pergi-gereja-gkdi-cover.png"
+                width="100%" height="500" class="img-fluid" style="border-radius:12px">
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-11 col-sm-11 col-11 mb-3 shadow-lg" style="border-radius: 6px">
+            <h1 class="text-center visi">Visi Misi GKS Laipori</h1>
+            <hr />
+            <h5 class="text-center">VISI</h5>
+            <p class="text-justify memo">
+                Menjadi jemaat yang hidup dalam komunitas keluarga Allah, yang berakar, dan dibangun di atas dasar iman yang teguh (Kolose 2:6-7)
+            </p>
+            <br />
+            <h5 class="text-center">MISI</h5>
+
+            <ol class="text-center t_misi">
+                <li class="text-justify">
+                   Komuniats Keluarga Allah
+                   <p>Keluarga Allah karena Kristus yang berkuasa didalamnya, keluarga yang teguh berdiri dalam situasi, keluarga yang dapat menyelesaikan setiap masalah dengan rasa persaudaraan.</p>
+                   <p>Keluarga yang berperan aktif untuk menafkahi dan merawat organ-organnya.</p>
+                   <p>Keluarga yang saling mengasihi tanpa membedakan siapa, suku, golongan.</p>
+                </li>
+                <li class="text-justify">
+                    Hidup
+                    <p>Memfungsikan semua organnya dengan baik dan normal, serta melangkah dan mencoba cara cara baru, serta memanfaatkan berbagai kemajuan teknologi perkembangan demi perkembangan pelayanan. terbuka dan berjaring <b>oikumenis</b> untuk kemajuan dan pertumbuhan jemaat berpatokan pada tata gereja GKS Pasal 24.</p>
+                </li>
+                <li class="text-justify">
+                    Berakar
+                    <p>ibarat pohon(mazmur 1:3) Kuat dalam ajaran Firman Tuhan, dan mejadikan Firman Allah sebagai sumber kekuatan dalam setiap situasi kehidupan</p>
+                </li>
+                <li class="text-justify">
+                    Dibangun
+                    <p>menanamkan nilai-nilai iman kristen dalam pertumbuhan jemaat. Dasar pertumbuhan iman hanya dalam Yesus Kristus.</p>
+                </li>
+                <li class="text-justify">
+                    Iman
+                    <p>Hidup beriman di dalam Yesus Kristus yang menyelamatkan dan memberikan keselamatan kekal</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-11 col-sm-9 col-11">
+            <div class="container d-flex flex-wrap imgsej">
+                <div class="col-md-4 mt-3 image-container">
+                    <img src="sejarah.jpeg" class="img-fluid" width="300" alt="gambar" style="border-radius:8px">
+                </div>
+                <div class="col-md-8 text-justify mt-3 text-container">
+                    <h4 class="text-center">Sejarah GKS Laipori</h4>
+                    <p>Sejarah berdirinya Jemaat Laipori dirintis dan didirikan pada 8 Desember 1978 dengan tokoh tokoh perintisnya adalah:
+                        <ol>
+                            <li>
+                            1. Yan Hari Ratu
+                            </li>
+                            <li>Petrus Padji Bangu (Alm)</li>
+                            <li>Asuming Hia Ke (alm)</li>
+                            <li>M.M. Huki</li>
+                            <li>Lukas Lulu Ngabi</li>
+                            <li>Jd. Berta Pe</li>
+                            <li>Petrus Pule Mangngi</li>
+                        </ol>
+                    </p>
+                    <p>Jemaat laipori sebelumnya berada atau merupakan bagian pelayanan dari dari GKS Kambaniru yang pada saat itu adalah POS PI. Setelah itu pada tahun 1995 Ketika GKS Jemaat Kawangu dimandirikan maka POS PI Laipori menjadi salah satu bagian dari wilayah pelayanan GKS Kawangu dari POS PI Menjadi Cabang. Laipori Yang pada saat itu yang menjadi pendetanya adalah Pdt. Jublina К.Т. Pigalao S. Th.</p>
+                    <button class="btn btn-outline-secondary" style="border-radius:12px;"><a href="" class="infosejarah" style="color:black; font-size:17px; font-weight:bold">Lihat  Selengkapnya</a></button>
+                    <!-- <p>Seiring pertumbuhan jemaat Laipori yang pesat maka ada rencana dari jemaat Laipori untuk di mandirikan. Sehingga pada kelapatan Klasis Kambaniru bertempat di GKS Muhukaba maka usulan tersebut diterima. </p>
+                    <p>Jemaat Laipori dengan semangat mempersiapkan segala sesuatu untuk tindak lanju usulan pemekaran menuju Visitasi Jemaat.15 Maret 2017. Dan kemudian panitia Pemekaran Jemaat Laipori bersama BPMJ GKS Kawangu menetapkan 3 orang Vicaris yang masuk dalam daftar pencalonan yaitu:
+                        <ol>
+                            <li>Vic. Yohanes daud Soleman S.Si. Theol</li>
+                            <li>Vic. Abraham Thimutius Bureni S.Th</li>
+                        </ol>
+                    </p> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- berita -->
+<div class="container-fluid berita">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-11 col-md-12 mt-5 shadow-lg">
+            <p class="mb-3 fw-bold" style="margin-left: 10px; font-size: 26px">
+                Berita Terkini
+            </p>
+            <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-12 mb-3 p-2 " style="position: relative">
+                    <a href="#" class="card" style="width: 100%; border:none;">
+                        <img src="1.jpeg"
+                            class="card-img-top" alt="Berita Terkini" />
+                        <div class="card-img-overlay rounded d-flex flex-column justify-content-end"
+                            style="bottom: 0; height: auto; padding: 1rem">
+                            <div class="pt-3">
+                                <h5 class="card-title text-white text-center">Kegiatan</h5>
+                                <p class="card-text text-white text-center" style="font-size: 13px">
+                                    kegiatan pertama
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3 p-2" style="position: relative">
+                    <a href="#" class="card" style="width: 100%; border:none;">
+                        <img src="3.jpeg"
+                            class="card-img-top" alt="Berita Terkini">
+                        <div class="card-img-overlay rounded d-flex flex-column justify-content-end"
+                            style="bottom: 0; height: auto; padding: 1rem">
+                            <div class="pt-3">
+                                <h5 class="card-title text-white text-center">Kegiatan Kedua</h5>
+                                <p class="card-text text-white text-center" style="font-size: 13px">
+                                    kegiatan kedua
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3 p-2" style="position: relative">
+                    <a href="#" class="card" style="width: 100%; border:none;">
+                        <img src="4.jpeg"
+                            class="card-img-top" alt="Berita Terkini" />
+                        <div class="card-img-overlay rounded d-flex flex-column justify-content-end"
+                            style="bottom: 0; height: auto; padding: 1rem">
+                            <div class="pt-3">
+                                <h5 class="card-title text-white text-center">Kegiatan Kedua</h5>
+                                <p class="card-text text-white text-center" style="font-size: 13px">
+                                    kegiatan kedua
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end berita -->
+
+<!-- pengurus -->
+<div class="container-fluid pengurus my-3 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-11 text-center mb-2">
+            <h2 class="fw-bold text-dark" style="font-size: 20px">
+                Pengurus Gereja
+            </h2>
+        </div>
+        <div class="col-lg-11" style="border-radius: 12px; background-color: slategray">
+            <div id="pengurusCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner p-3">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="pendeta.jpeg"
+                                class="img-fluid rounded" alt="Pengurus 1" width="500" />
+                        </div>
+                        <div class="carousel-caption title d-md-block">
+                            <h5 class="text-white" style="font-weight:bold">Nama Pengurus 1</h5>
+                            <p class="text-white" style="font-weight:bold">Jabatan Pengurus 1</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="pendeta.jpeg"
+                                class="img-fluid rounded" alt="Pengurus 2" width="500" />
+                        </div>
+                        <div class="carousel-caption d-md-block">
+                            <h5 class="text-white" style="font-weight:bold">Nama Pengurus 2</h5>
+                            <p class="text-white" style="font-weight:bold">Jabatan Pengurus 2</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="pendeta.jpeg"
+                                class="img-fluid rounded" alt="Pengurus 3" width="500" />
+                        </div>
+                        <div class="carousel-caption d-md-block">
+                            <h5 class="text-white" style="font-weight:bold">Nama Pengurus 3</h5>
+                            <p class="text-white" style="font-weight:bold">Jabatan Pengurus 3</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#pengurusCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#pengurusCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end pengurus -->
+
+<!-- statistik jemaat -->
+<div class="container-fluid my-3">
+    <div class="row text-center">
+        <div class="col-12 mb-3">
+            <h2>Statistik Gereja</h2>
+        </div>
+        <!-- Card Section -->
+        <div class="col-lg-2 col-md-4 col-12 mb-3">
+            <div class="card" style="border: none">
+                <div class="card-body">
+                    <p>100</p>
+                    <i class="fas fa-user-tie" style="font-size: 24px"></i>
+                    <h5>Kepala Keluarga</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12 mb-3">
+            <div class="card" style="border: none">
+                <div class="card-body">
+                    <p>100</p>
+                    <i class="fas fa-user-tie" style="font-size: 24px"></i>
+                    <h5>Anggota Jemaat</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12 mb-3">
+            <div class="card" style="border: none">
+                <div class="card-body">
+                    <p>100</p>
+                    <i class="fas fa-user-tie" style="font-size: 24px"></i>
+                    <h5>Anggota Laki-Laki</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12 mb-3">
+            <div class="card" style="border: none">
+                <div class="card-body">
+                    <p>100</p>
+                    <i class="fas fa-user-tie" style="font-size: 24px"></i>
+                    <h5>Anggota Perempuan</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12 mb-3">
+            <div class="card" style="border: none">
+                <div class="card-body">
+                    <p>100</p>
+                    <i class="fas fa-user-tie" style="font-size: 24px"></i>
+                    <h5>Anggota Lansia</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end statistik jemaat -->
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-11 col-md-8 col-sm-9 col-11 mb-3 bg-light" style="border-radius: 10px">
+
+        </div>
+    </div>
+</div>
+
+
+    <footer class="bg-dark text-light pt-4">
+        <div class="container">
+            <div class="row">
+    
+              
+                <div class="col-md-4">
+                    <h5>Donasi</h5>
+                    <p></p>
+                    <p><i class="bi bi-credit-card"></i> 1234567890</p>
+                    
+                </div>
+    
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>Contack Kami</h5>
+                    <div class="social-icons mt-3">
+                    <p><i class="fas fa-phone-alt"></i> +62 1234567890</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:support@gmail.com"
+                            class="text-light">gkslaipori@gmail.com</a></p>
+                        <a href="#" class="text-light me-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Lokasi Gereja</h5>
+                    <div class="social-icons mt-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.425243476816!2d120.45764007478881!3d-9.644657990443394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c4c93ba8d908de7%3A0x2221891d65eb7cd1!2sGKS%20Jemaat%20Laipori!5e0!3m2!1sid!2sid!4v1732875606174!5m2!1sid!2sid" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    
+    </html>
+
